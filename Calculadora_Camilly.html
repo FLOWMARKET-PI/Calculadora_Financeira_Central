@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Simulador Financeiro</title> 
+    <link rel="stylesheet" href="Style-Camilly.css"> 
+</head>
+<body> 
+    <div class="fundo"> 
+        <div class="calculadora"> 
+            <h1>Simulador Financeiro</h1> 
+            <p class="descricao">Calcule o potencial valor não movimentado devido à desistência de clientes.</p> 
+
+            <div class="informacoes"> 
+                <p>Taxa de desistência: 41,3%</p> 
+                <p>Gasto médio diário: R$ 35,80</p> 
+            </div> 
+            <div class="info_2"> 
+                <p>Quantidade média de clientes por mês:</p> 
+                <input id="ipt_cliente" placeholder="Digite a quantidade"> 
+            </div> 
+            <button onclick="clientes()">Fazer Simulação</button> 
+            <div id="div_exibir" class="resultado"></div>
+        </div> 
+    </div> 
+</body> 
+</html> 
+<script> 
+function clientes() { 
+    let ValorMensal = 1073.98; 
+
+    let ValorDiario = ValorMensal / 30; 
+
+    let PercentualDesistencia = 0.413; 
+
+    let QuantClientes = Number(ipt_cliente.value);
+    let TotalImaginarioMes = QuantClientes * ValorMensal; 
+    let Desistencia = QuantClientes * PercentualDesistencia; 
+    let PrejuizoMes = Desistencia * ValorMensal; 
+    let TotalImaginarioDia = QuantClientes * ValorDiario; 
+    let PrejuizoDia = (QuantClientes * PercentualDesistencia) * ValorDiario; 
+
+    div_exibir.innerHTML = ` 
+    <h2>Resultado da Simulação</h2> 
+    <p class="inicio">👥 Clientes analisados: ${ipt_cliente.value}<BR> 
+    💰 Valor movimentado por dia: R$ ${TotalImaginarioDia.toFixed(2)}<br> 
+    📅 Valor movimentado por mês: R$ ${TotalImaginarioMes.toFixed(2)}<br> 
+    ⚠️ Potencial não movimentado por dia: R$ ${PrejuizoDia.toFixed(2)}<br> 
+    📉 Potencial não movimentado por mês: R$ ${PrejuizoMes.toFixed(2)}<br></p> 
+    <span>Potencial de vendas:</span> ao reduzir as desistências, o supermercado pode recuperar parte desse valor. 
+    <p class="observacao"> 
+        Os valores são estimativas e não representam 
+        lucro ou perda financeira comprovada. 
+    </p> `; 
+
+} 
+</script> 
+
+ 
+ 
+
+ 
