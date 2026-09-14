@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowMarket</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="info">
+            <h3>Diagnóstico do fluxo</h3>
+
+            <div class="estatistica">
+                <span class="span-info">41,3%</span>
+                <p class="p-info">Índice estimado de consumidores propensos a desistir da compra 
+                    ao enfrentar filas longas</p>
+            </div>
+
+            <div class="divisor-info"></div>
+
+            <div class="estatistica">
+                <span class="span-info">R$ 35,80</span>
+                <p class="p-info">Gasto diário estimado por pessoa no mercado</p>
+            </div>
+        </div>
+
+        <div class="calculo">
+            <h1>Calculadora Financeira</h1>
+            <p class="subtitulo">Calcule a sua perda</p>
+
+            <p class="p-calculo">Entrada total de clientes</p>
+            <input class="input" id="ipt_entrada">
+
+            <button class="button" onclick="calcular()">Calcular</button>
+
+            <div class="resultado">
+                <p class="p-resultado">Perda diária estimada</p>
+                <span class="span-neutro" id="valor_diario">—</span>
+            </div>
+
+            <div class="divisor-calculo"></div>
+
+            <div class="resultado">
+                <p class="p-resultado">Perda mensal estimada</p>
+                <span class="span-neutro" id="valor_mensal">—</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+    function calcular() {
+
+        let entrada_pessoas = Number(ipt_entrada.value);
+        let perda_porcent = 0.413;
+        let ticket_medio = 35.8; // 1078,98 / 30
+        let perda_diaria = (entrada_pessoas * perda_porcent) * ticket_medio;
+        let perda_mensal = perda_diaria * 30;
+
+        if (entrada_pessoas <= 0) {
+            valor_diario.innerHTML = '<span class="span-red">Valor inválido</span>';
+            valor_mensal.innerHTML = '<span class="span-red">Valor inválido</span>';
+        } else {
+             valor_diario.innerHTML = `<span class="span-red"> R$ ${perda_diaria.toFixed(2)} 
+                </span>`;
+             valor_mensal.innerHTML = `<span class="span-red"> R$ ${perda_mensal.toFixed(2)} 
+                </span>`;
+        }
+
+    }
+
+</script>
+
+</html>

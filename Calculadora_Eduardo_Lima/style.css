@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0F4C3A;
+}
+
+.container {
+    background-color: white;
+    border: 2px solid #D0F2E5;
+    border-radius: 10px;
+    width: 660px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* --------- informações ---------- */
+
+.info {
+    background-color: #0F4C3A;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 35px;
+}
+
+.info h3{
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.estatistica {
+    width: 100%;
+    text-align: center;
+}
+
+.span-info {
+    color: #7bc043;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.p-info {
+    color: #D0F2E5;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 19px;
+}
+
+.divisor-info {
+    width: 40px;
+    height: 1px;
+    background-color: #7BC043;
+    margin: 26px auto;
+}
+
+/* --------- calculadora ---------- */
+
+.calculo {
+    background-color: white;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 35px;
+}
+
+h1 {
+    color: #0F4C3A;
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.subtitulo {
+    color: #121212;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.p-calculo {
+    text-align: center;
+    color: #0F4C3A;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.input {
+    border: 2px solid #0F4C3A;
+    border-radius: 8px;
+    background-color: antiquewhite;
+    color: #121212;
+    width: 220px;
+    height: 42px;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+.button {
+    background-color: #0f4c3a;
+    color: white;
+    border-radius: 8px;
+    width: 220px;
+    height: 44px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.resultado {
+    width: 100%;
+    text-align: center;
+}
+
+.p-resultado {
+    color: #0f4c3a;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.divisor-calculo {
+    width: 40px;
+    height: 1px;
+    background-color: #0f4c3a;
+    margin: 18px auto;
+}
+
+.span-red {
+    color: red;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.span-neutro {
+    color: #0f4c3a;
+    font-weight: bold;
+    font-size: 23px;
+}
