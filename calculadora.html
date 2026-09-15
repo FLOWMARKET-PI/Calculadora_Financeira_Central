@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowmarket — Simulador de Impacto das Filas</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+ 
+    <div class="fundo"></div>
+ 
+    <div class="cartao">
+ 
+        <div class="cartao__topo">
+            <div class="logo">
+                <svg class="logo__carrinho" viewBox="0 0 48 40" aria-hidden="true">
+                    <path d="M2 4h5l3 20a3 3 0 0 0 3 2.5h17a3 3 0 0 0 3-2.5l3-15H12"
+                          fill="none" stroke="currentColor" stroke-width="3.4"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="15" cy="35" r="3" fill="currentColor"/>
+                    <circle cx="29" cy="35" r="3" fill="currentColor"/>
+                </svg>
+                <p class="logo__texto">
+                    <span class="logo__flow">Flow</span><span class="logo__market">market</span>
+                </p>
+            </div>
+            <h1>Simulador de impacto das filas</h1>
+            <h2>descubra o impacto financeiro estimado das filas no caixa</h2>
+        </div>
+ 
+        <div class="cartao__corpo">
+ 
+            <p>
+                Esta ferramenta pega os dados da operação da loja e converte
+                em uma projeção financeira, mostrando ao gestor uma ideia do
+                possível impacto causado por períodos de fila longa.
+            </p>
+ 
+            <h3>Quantos consumidores foram observados na fila?</h3>
+            <input type="text" id="ipt_consumidores" placeholder="ex: 120"><br>
+ 
+            <p><b>Taxa de desistência:</b> 41,3%</p>
+            <p><b>Gasto médio diário:</b> R$ 35,80</p>
+ 
+            <button onclick="calcular()">Calcular impacto</button>
+ 
+            <p>impacto estimado por dia</p>
+            <h2 id="div_exibir">R$ 0,00</h2>
+ 
+            <p>impacto estimado por mês</p>
+            <h2 id="div_exibir_mensal">R$ 0,00</h2>
+ 
+            <p class="aviso">
+                <small>
+                    Obs: número é uma projeção, não uma perda confirmada.
+                    A taxa de 41,3% vem de um estudo pontual e não vale pra
+                    todo consumidor brasileiro.
+                </small>
+            </p>
+ 
+        </div>
+    </div>
+ 
+</body>
+<script>
+ 
+function calcular() {
+    let impacto = Number(ipt_consumidores.value) * 0.413 * 35.80
+    let impactoMensal = impacto * 30
+    let valorFormatado = impacto.toFixed(2)
+    let valorMensalFormatado = impactoMensal.toFixed(2)
+ 
+    if (impacto <= 0) {
+        div_exibir.innerHTML = "digite um número de consumidores"
+        div_exibir_mensal.innerHTML = "-"
+    }
+ 
+    if (impacto > 0) {
+        div_exibir.innerHTML = `R$ ${valorFormatado}`
+        div_exibir_mensal.innerHTML = `R$ ${valorMensalFormatado}`
+    }
+}
+</script>
+</html>
+ 

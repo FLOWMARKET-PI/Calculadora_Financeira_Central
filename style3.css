@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+ 
+body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #21302a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+     background-color: #14453b;
+}
+ 
+.cartao {
+    width: 30%;
+    border-radius: 16px;
+    background: #ffffff;
+}
+ 
+/* Topo (verde escuro, marca Flowmarket)  */
+ 
+.cartao__topo {
+    background: #0b3028;
+    padding: 15px;
+    text-align: center;
+    color: #f4f8f2;
+    border-radius: 5%;
+}
+ 
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+ 
+.logo__carrinho {
+    width: 12%;
+    height: 15%;
+    color: #f4f8f2;
+}
+ 
+.logo__flow {
+    color: #7cb342;
+}
+ 
+.logo__market {
+    color: #f4f8f2;
+    font-weight: bold;
+}
+ 
+.cartao__topo h1 {
+    margin: 10px;
+    color: #f4f8f2;
+}
+ 
+.cartao__topo h2 {
+    color: #a8cf6f;
+}
+ 
+ 
+.cartao__corpo {
+    padding: 15px;
+}
+ 
+.cartao__corpo input {
+    width: 100%;
+    padding: 17px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+ 
+.cartao__corpo button {
+    width: 100%;
+    padding: 13px;
+    background: #7cb342;
+    color: #143620;
+    border-radius: 10px;
+    font-weight: bold;
+}
+ 
+.cartao__corpo h2 {
+    color: #14453b;
+    text-align: center;
+}
+ 
+.aviso {
+    color: #8a6d1d;
+}
+ 
