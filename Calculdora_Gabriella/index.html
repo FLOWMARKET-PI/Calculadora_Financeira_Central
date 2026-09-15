@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="calculadora-icon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="conteudo">
+            <H1>Calculadora Financeira</H1>
+            <H3>Calcule a sua perda</H3>
+            <p>Entrada total de clientes</p><input type="text" id="ipt_entrada" class="input"> <br>
+            <span class="span-green">41,3%</span>
+            <p class="p-style">Índice estimado de consumidores propensos a desistir da compra ao enfrentar filas longas
+            </p><br>
+            <span class="span-green">R$35,80</span>
+            <p class="p-style">Gasto diário estimado por pessoa no mercado</p>
+            <button onclick="calcular()" class="button">Calcular</button><br>
+            <div id="div_exibir" class="conteudo-div_exibir"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        let entradaPessoas = Number(ipt_entrada.value);
+        let perdaPorcent = 0.41;
+        let ticketMedio = 35.8; // 1078,98 / 30
+
+        let perdaDiaria = (entradaPessoas * perdaPorcent) * ticketMedio;
+        let perdaMensal = perdaDiaria * 30;
+
+        if (entradaPessoas <= 0) {
+            div_exibir.innerHTML =
+                `Valor inválido. Tente Novamente!`;
+        }
+        else {
+            div_exibir.innerHTML =
+                `A perda diária é de: <br> <span class="span-red"> ${perdaDiaria.toFixed(2)} </span> <br>
+            A perda mensal com base no valor diário é de: <br> <span class="span-red"> ${perdaMensal.toFixed(2)} </span>`;
+        }
+    }
+</script>         1  
